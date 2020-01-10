@@ -13,17 +13,33 @@ Showing 1000 genomes psuedo data variant and non-variant frequencies
 Example config
 
     {
+        "label": "Allele frequencies",
+        "urlTemplate": "file.test.vcf.gz",
+        "glyph": "PiechartPlugin/View/FeatureGlyph/Pie",
         "style": {
             "variantColor": "brown",
             "nonvariantColor": "purple"
         }
     }
 
+In tracks.conf format
+
+    [tracks.allele_freq]
+    key=Allele frequencies
+    urlTemplate=volvox.test.vcf.gz
+    glyph=PiechartPlugin/View/FeatureGlyph/Pie
+
 
 
 ## Known issues
 
 The circular glyph is not given enough proper space to render so features can overlap slightly and the block boundaries can cause issues
+
+## Test data
+
+See test/data/ folder for example
+
+Visit http://localhost/jbrowse/?data=plugins/PiechartPlugin/test/data to verify your installation
 
 ## Installation
 
