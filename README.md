@@ -3,14 +3,16 @@
 A JBrowse plugin for plotting allele frequencies as a track glyph
 
 
-Screenshot
+## Screenshot
 
 ![](img/t11.png)
 
 Showing 1000 genomes psuedo data variant and non-variant frequencies
 
 
-Example config
+## Example config
+
+This shows allele frequencies calculated from multi-sample VCF
 
     {
         "label": "Allele frequencies",
@@ -29,6 +31,18 @@ In tracks.conf format
     urlTemplate=volvox.test.vcf.gz
     glyph=PiechartPlugin/View/FeatureGlyph/Pie
 
+
+## Example config for PieAF
+
+This shows allele-frequency calculated from just using the AF tag in the info field
+
+    [tracks.allele_freq]
+    key=Allele frequencies
+    urlTemplate=volvox.test.vcf.gz
+    glyph=PiechartPlugin/View/FeatureGlyph/PieAF
+    style.variantColor=grey,pink,brown
+
+The style.variantColor is optional, a default set of grey,blue,red,green
 
 
 ## Known issues

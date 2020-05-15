@@ -3,9 +3,7 @@ define([
     'dojo/_base/lang',
     'dojo/_base/array',
     'JBrowse/Util/FastPromise',
-    'JBrowse/View/FeatureGlyph/Box',
-    'JBrowse/Util',
-    'JBrowse/Model/NestedFrequencyTable'
+    'JBrowse/View/FeatureGlyph/Box'
 ],
 function (
     declare,
@@ -13,8 +11,6 @@ function (
     array,
     FastPromise,
     Box,
-    Util,
-    NestedFrequencyTable
 ) {
     return declare(Box, {
         _defaultConfig: function () {
@@ -30,7 +26,7 @@ function (
 
         // top and height are in px
         renderBox: function (context, viewInfo, feature, top, overallHeight, parentFeature, style) {
-            console.log('here')
+            console.log('here');
             var left  = viewInfo.block.bpToX(feature.get('start'));
             var width = viewInfo.block.bpToX(feature.get('end')) - left;
             var f = feature;
@@ -38,10 +34,10 @@ function (
             if (!genotypes) {
                 return;
             }
-            var alts = (f.get('AF')||{}).values||[];
-            const total = alts.reduce((a,b)=>a+b,0)
-            alts = [1-total,...alts]
-            console.log(alts)
+            var alts = (f.get('AF') || {}).values || [];
+            const total = alts.reduce((a, b)=>a + b, 0);
+            alts = [1 - total, ...alts];
+            console.log(alts);
 
             style = style || lang.hitch(this, 'getStyle');
 
@@ -62,14 +58,14 @@ function (
             context.fillStyle = 'black';
             context.fill();
             // end of background
-            const colors = style(feature, 'variantColor').split(',')
-            console.log(colors)
+            const colors = style(feature, 'variantColor').split(',');
+            console.log(colors);
             let previousRadian = 0;
 
-            alts.forEach((alt,index) => {
+            alts.forEach((alt, index) => {
                 context.beginPath();
                 context.fillStyle = colors[index];
-                console.log(alt,index,colors[index])
+                console.log(alt, index, colors[index]);
                 const radian = (Math.PI * 2) * alt;
                 context.moveTo(middleX, middleY);
                 context.arc(middleX, middleY, height - 1, previousRadian, previousRadian + radian, false);
@@ -83,7 +79,6 @@ function (
 
                 previousRadian += radian;
             });
-
         }
 
     });
