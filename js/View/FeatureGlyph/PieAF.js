@@ -18,7 +18,7 @@ function (
                 this.inherited(arguments),
                 {
                     style: {
-                        variantColor: 'grey,blue,red,green,yellow,orange,pink,purple'
+                        variantColor: 'orange,green,red,blue,yellow,pink,purple'
                     }
                 });
         },
