@@ -12,6 +12,9 @@ Showing 1000 genomes psuedo data variant and non-variant frequencies
 
 ## Example config
 
+
+### Pie glyph (calculates from hom/het from genotypes)
+
 This shows allele frequencies calculated from multi-sample VCF
 
     {
@@ -32,7 +35,7 @@ In tracks.conf format
     glyph=PiechartPlugin/View/FeatureGlyph/Pie
 
 
-## Example config for PieAF
+### PieAF glyph (calculates from the AF INFO tag)
 
 This shows allele-frequency calculated from just using the AF tag in the info field
 
@@ -45,9 +48,13 @@ This shows allele-frequency calculated from just using the AF tag in the info fi
 The style.variantColor is optional, a default set of grey,blue,red,green
 
 
-## Known issues
+## Configuration
 
-The circular glyph is not given enough proper space to render so features can overlap slightly and the block boundaries can cause issues
+
+- glyph - can be PiechartPlugin/View/FeatureGlyph/PieAF or PiechartPlugin/View/FeatureGlyph/Pie
+- style.height - changes diameter of the drawn circle
+- style.variantColor - with PieAF glyph, this is a comma separated list. With Pie glyph it is the alt allele
+- style.nonvariantColor - the Pie glyph this is the ref allele
 
 ## Test data
 

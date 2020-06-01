@@ -28,6 +28,11 @@ function (
                 });
         },
 
+        _expandRectangleWithLabels: function (viewInfo, feature, fRect) {
+            var height = this._getFeatureHeight(viewInfo, feature);
+            fRect.w += height;
+            this.inherited(arguments);
+        },
         // similar to code in _VariantDetailMixin in jbrowse core
         calculateGenotypeFrequencies: function (genotypes, alt) {
             var counts = new NestedFrequencyTable();
@@ -76,7 +81,7 @@ function (
 
             context.clearRect(left, top, Math.max(1, width), height);
             height = height / 2;
-            let middleX = left + height / 2;
+            let middleX = left + height;
             let middleY = top + height;
 
             // background
