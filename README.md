@@ -53,8 +53,8 @@ The style.variantColor is optional, a default set of grey,blue,red,green
 
 - glyph - can be PiechartPlugin/View/FeatureGlyph/PieAF or PiechartPlugin/View/FeatureGlyph/Pie
 - style.height - changes diameter of the drawn circle
-- style.variantColor - with PieAF glyph, this is a comma separated list. With Pie glyph it is the alt allele
-- style.nonvariantColor - the Pie glyph this is the ref allele
+- style.variantColor - with PieAF glyph, this is a comma separated list. With Pie glyph it is the color for any alt allele: default green
+- style.nonvariantColor - the Pie glyph this is the color for the ref allele: default orange
 
 ## Test data
 
