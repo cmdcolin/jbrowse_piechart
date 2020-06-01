@@ -23,7 +23,11 @@ function (
                 });
         },
 
-
+        _expandRectangleWithLabels: function (viewInfo, feature, fRect) {
+            var height = this._getFeatureHeight(viewInfo, feature);
+            fRect.w += height;
+            this.inherited(arguments);
+        },
         // top and height are in px
         renderBox: function (context, viewInfo, feature, top, overallHeight, parentFeature, style) {
             var left  = viewInfo.block.bpToX(feature.get('start'));
@@ -45,7 +49,7 @@ function (
 
             context.clearRect(left, top, Math.max(1, width), height);
             height = height / 2;
-            let middleX = left + height / 2;
+            let middleX = left + height;
             let middleY = top + height;
 
             // background
