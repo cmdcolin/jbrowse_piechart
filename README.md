@@ -7,7 +7,7 @@ A JBrowse plugin for plotting allele frequencies as a track glyph
 
 ![](img/t11.png)
 
-Showing 1000 genomes psuedo data variant and non-variant frequencies
+Showing 1000 genomes pseudo data variant and non-variant frequencies
 
 
 ## Example config
